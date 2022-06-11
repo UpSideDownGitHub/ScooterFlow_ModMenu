@@ -1,0 +1,8 @@
+{
+	"Id": "USDC_ModMenu",
+	"DisplayName": "USDC ModMenu",
+	"Version": "0.0.1",
+	"Author": "UpSideDownCord#1346",
+	"AssemblyName": "USDCModMenu.dll",
+	"EntryMethod": "USDCModMenu.Main.Load"
+}
