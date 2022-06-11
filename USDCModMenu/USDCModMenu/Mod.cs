@@ -8,6 +8,7 @@ namespace USDCModMenu
 	{
 		private void Start()
 		{
+			mod = this;
 		}
 		private void Update()
 		{
@@ -127,26 +128,26 @@ namespace USDCModMenu
 				i++;
 				LoopingAnimations = GUI.Toggle(new Rect(10f, 50f * (float)i, 200f, 30f), LoopingAnimations, "Looping Animations");
 				i++;
-				for (int i = 0; i < AnimationName.Length; i++)
+				for (int j = 0; j < AnimationName.Length; j++)
 				{
-					GUI.Label(new Rect(10f, 50f * (float)i, 100f, 30f), AnimationName[i]);
-					GUI.Label(new Rect(100f, 50f * (float)i, 100f, 30f), AnimationSpeeds[i].ToString());
+					GUI.Label(new Rect(10f, 50f * (float)i, 100f, 30f), AnimationName[j]);
+					GUI.Label(new Rect(100f, 50f * (float)i, 100f, 30f), AnimationSpeeds[j].ToString());
 					if (GUI.Button(new Rect(200f, 50f * (float)i, 30f, 30f), "+"))
 					{
-						AnimationSpeeds[i] += 0.5f;
+						AnimationSpeeds[j] += 0.5f;
 					}
 					if (GUI.Button(new Rect(250f, 50f * (float)i, 30f, 30f), "-"))
 					{
-						AnimationSpeeds[i] -= 0.5f;
+						AnimationSpeeds[j] -= 0.5f;
 					}
-					CustomValues[30 + i] = GUI.TextField(new Rect(300f, 50f * (float)i, 100f, 30f), CustomValues[30 + i]);
+					CustomValues[30 + j] = GUI.TextField(new Rect(300f, 50f * (float)i, 100f, 30f), CustomValues[30 + j]);
 					if (GUI.Button(new Rect(410f, 50f * (float)i, 60f, 30f), "Set"))
 					{
-						AnimationSpeeds[i] = float.Parse(CustomValues[30 + i]);
+						AnimationSpeeds[j] = float.Parse(CustomValues[30 + j]);
 					}
 					if (GUI.Button(new Rect(480f, 50f * (float)i, 60f, 30f), "Reset"))
 					{
-						AnimationSpeeds[i] = OrignalValues[30];
+						AnimationSpeeds[j] = OrignalValues[30];
 					}
 					i++;
 				}
@@ -750,6 +751,7 @@ namespace USDCModMenu
 			GUI.EndScrollView();
 			GUI.DragWindow(new Rect(0f, 0f, 10000f, 20f));
 		}
+		public static Mod mod;
 
 		public bool doOnce = true;
 

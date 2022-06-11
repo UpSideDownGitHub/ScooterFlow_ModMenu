@@ -17,7 +17,9 @@ namespace USDCModMenu
 			GameObject gameObject = new GameObject();
 			gameObject.name = "Main Script - UpSideDownCord#1346";
 			gameObject.AddComponent<Mod>();
+
 			UnityEngine.Object.DontDestroyOnLoad(gameObject);
+
 			return true;
 		}
 
